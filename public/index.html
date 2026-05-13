@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eigenwealth — AI-Powered Quant Research for Indian Markets</title>
+<meta name="description" content="Eigenwealth uses ML models and LLM AI to score every Nifty 500 stock, explain the signal, and alert you before the market moves. Join the waitlist."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo"><div class="logo-mark">λ</div>Eigenwealth</div>
+      <div class="nav-links">
+        <a href="#agents">AI Agents</a>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#blog">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a href="#waitlist" class="btn btn-ghost" style="padding:8px 18px;font-size:13px;">Sign in</a>
+        <a href="#waitlist" class="btn btn-accent" style="padding:8px 18px;font-size:13px;">Join Waitlist →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="waitlist">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="fade">
+        <div class="hero-eyebrow">
+          <div class="badge badge-green"><span class="live-dot"></span> Pre-Launch</div>
+          <div class="badge badge-blue">Nifty 500 · AI-Powered</div>
+        </div>
+        <h1>Quant Intelligence.<br/><span class="gradient-text">For Every Investor.</span></h1>
+        <p class="sub">Eigenwealth scores every Nifty 500 stock using ML models, explains the signal in plain English with AI, and alerts you before the market moves — at a fraction of what institutions pay.</p>
+        <div class="hero-actions">
+          <a href="#agents" class="btn btn-ghost btn-lg">Explore AI Agents →</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="hero-metric">
+            <div class="metric-val mono" data-counter="500" data-suffix="">0</div>
+            <div class="metric-label">Stocks analysed</div>
+          </div>
+          <div class="hero-metric">
+            <div class="metric-val mono" data-counter="40" data-suffix="+">0</div>
+            <div class="metric-label">ML factors scored</div>
+          </div>
+          <div class="hero-metric">
+            <div class="metric-val mono">5Y</div>
+            <div class="metric-label">Backtest history</div>
+          </div>
+          <div class="hero-metric">
+            <div class="metric-val mono" data-counter="300" data-suffix="+" data-live-count>300+</div>
+            <div class="metric-label">Waitlist investors</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waitlist Card -->
+      <div class="wl-card fade fade-delay-1" id="wl-card">
+        <div class="wl-top">
+          <div class="wl-top-head">🚀 Get Early Access</div>
+          <div class="wl-top-sub">Founding members get best pricing + direct team access</div>
+        </div>
+        <div class="wl-body">
+          <form id="wlForm">
+            <div class="fl">
+              <div class="fg"><label class="flabel">First Name</label><input class="finput" type="text" name="first_name" placeholder="Ravi" required/></div>
+              <div class="fg"><label class="flabel">Last Name</label><input class="finput" type="text" name="last_name" placeholder="Sharma"/></div>
+            </div>
+            <div class="fg"><label class="flabel">Email Address</label><input class="finput" type="email" name="email" placeholder="ravi@example.com" required/></div>
+            <div class="fg"><label class="flabel">WhatsApp Number</label><input class="finput" type="tel" name="whatsapp" placeholder="+91 98765 43210" required/></div>
+            <div class="fg"><label class="flabel">Portfolio Size</label>
+              <select class="finput" name="portfolio_size">
+                <option value="" disabled selected>Select range (optional)</option>
+                <option>Under ₹1 Lakh</option><option>₹1L – ₹5L</option><option>₹5L – ₹20L</option><option>₹20L – ₹50L</option><option>Above ₹50L</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-accent fsub" id="submitBtn">Join the Waitlist — Free</button>
+            <div class="fnote">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              Encrypted · No spam · Cancel anytime
+            </div>
+          </form>
+          <div class="fsuccess" id="fsuccess">
+            <div class="fsuccess-icon">✅</div>
+            <h3>You're on the list!</h3>
+            <p>We'll notify you via email and WhatsApp when Eigenwealth launches. Founding members get best pricing.</p>
+            <a href="#blog" class="btn btn-ghost" style="margin-top:16px;font-size:13px;">Read our blog while you wait →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><b>RELIANCE</b> <span class="up">▲ 2.3%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>INFY</b> <span class="dn">▼ 0.8%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>DIXON</b> <span class="up">▲ 4.1%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TRENT</b> <span class="up">▲ 1.9%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>HDFCBANK</b> <span class="dn">▼ 0.3%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TCS</b> <span class="up">▲ 0.6%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>BAJFINANCE</b> <span class="dn">▼ 1.2%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>KPIL</b> <span class="up">▲ 3.4%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TITAN</b> <span class="up">▲ 1.1%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>LTIM</b> <span class="dn">▼ 0.5%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>RELIANCE</b> <span class="up">▲ 2.3%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>INFY</b> <span class="dn">▼ 0.8%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>DIXON</b> <span class="up">▲ 4.1%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TRENT</b> <span class="up">▲ 1.9%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>HDFCBANK</b> <span class="dn">▼ 0.3%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TCS</b> <span class="up">▲ 0.6%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>BAJFINANCE</b> <span class="dn">▼ 1.2%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>KPIL</b> <span class="up">▲ 3.4%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>TITAN</b> <span class="up">▲ 1.1%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><b>LTIM</b> <span class="dn">▼ 0.5%</span></span>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Bank-grade encryption</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Real-time market signals</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Updated every week</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>300+ investors on waitlist</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Built in India 🇮🇳</div>
+    </div>
+  </div>
+</div>
+
+<!-- AI AGENTS -->
+<section class="section" id="agents">
+  <div class="container">
+    <div class="section-header fade">
+      <div class="label"><span class="label-dot"></span>AI Research Agents</div>
+      <h2>Specialised agents.<br/>One platform.</h2>
+      <p class="sub">Like Kavout's AI agents — each Eigenwealth agent is purpose-built for a specific investing task, powered by ML and LLMs working together.</p>
+    </div>
+    <div class="agents-grid">
+      <div class="agent-card fade fade-delay-1"><div class="agent-emoji">📊</div><h4>MultiBagger Score</h4><p>ML model scores every Nifty 500 stock on multibagger potential, updated weekly.</p><div class="agent-badge"><span class="badge badge-green">Core Agent</span></div></div>
+      <div class="agent-card fade fade-delay-1"><div class="agent-emoji">🤖</div><h4>EigenGPT</h4><p>LLM copilot trained on earnings calls, filings, and news. Ask anything about any stock.</p><div class="agent-badge"><span class="badge badge-blue">LLM Agent</span></div></div>
+      <div class="agent-card fade fade-delay-2"><div class="agent-emoji">🔍</div><h4>Smart Screener</h4><p>Natural language stock screening. Describe your criteria — get your stocks.</p><div class="agent-badge"><span class="badge badge-green">Search Agent</span></div></div>
+      <div class="agent-card fade fade-delay-2"><div class="agent-emoji">💼</div><h4>Portfolio Health</h4><p>AI analyses your holdings for risk, concentration, and factor exposure.</p><div class="agent-badge"><span class="badge badge-amber">Risk Agent</span></div></div>
+      <div class="agent-card fade fade-delay-3"><div class="agent-emoji">🔔</div><h4>Smart Signals</h4><p>Real-time alerts when scores shift, volume spikes, or promoters move.</p><div class="agent-badge"><span class="badge badge-green">Alert Agent</span></div></div>
+      <div class="agent-card fade fade-delay-3"><div class="agent-emoji">📄</div><h4>Earnings Decoder</h4><p>Upload any quarterly PDF — AI extracts highlights, red flags, and guidance.</p><div class="agent-badge"><span class="badge badge-blue">Doc Agent</span></div></div>
+      <div class="agent-card fade"><div class="agent-emoji">📈</div><h4>Sector Radar</h4><p>Track FII/DII flows and sector momentum. Know where smart money is rotating.</p><div class="agent-badge"><span class="badge badge-amber">Flow Agent</span></div></div>
+      <div class="agent-card fade"><div class="agent-emoji">✍️</div><h4>Quant Blog</h4><p>Weekly deep dives at the intersection of ML and Indian markets. Free forever.</p><div class="agent-badge"><span class="badge badge-green">Live Now</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT PREVIEW -->
+<section class="section" style="background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" id="features">
+  <div class="container">
+    <div class="mission-grid fade">
+      <div>
+        <div class="label"><span class="label-dot"></span>Product Preview</div>
+        <h2>Institutional-grade research.<br/>In one dashboard.</h2>
+        <p class="sub" style="margin-top:14px;">Every stock scored, every signal explained, every alert justified — so you invest with data, not gut feeling.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,200,5,.08);border:1px solid rgba(0,200,5,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📊</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;">ML Score for every Nifty 500 stock</div><div style="font-size:12px;color:var(--t3);">XGBoost model trained on 5 years of Indian market data with walk-forward validation.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🤖</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;">LLM explains every signal in plain English</div><div style="font-size:12px;color:var(--t3);">Not just a number — a thesis. Why the stock scored high, what to watch, what could change.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🔔</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;">Alerts before the market moves</div><div style="font-size:12px;color:var(--t3);">Score changes, unusual volume, promoter buying — flagged with context, not just a number.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mock-window fade fade-delay-1">
+        <div class="mock-bar">
+          <div class="mock-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <div class="mock-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>app.eigenwealth.in</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-panel-header">
+            <div><div class="mock-panel-title">📊 Top ML Picks — Week 20, 2025</div><div class="mock-panel-sub" style="margin-top:2px;">Nifty 500 · Walk-forward validated · Updated Monday</div></div>
+            <div class="badge badge-green"><span class="live-dot"></span>Live</div>
+          </div>
+          <div class="mock-stock-row">
+            <div class="mock-tkr">DIXN</div>
+            <div><div class="mock-sname">Dixon Technologies</div><div class="mock-ssec">Electronics · Mid Cap</div></div>
+            <div class="mock-score-bar"><div class="mock-score-val">91</div><div class="mock-bar-track"><div class="mock-bar-fill" style="width:91%"></div></div></div>
+          </div>
+          <div class="mock-stock-row">
+            <div class="mock-tkr">TRENT</div>
+            <div><div class="mock-sname">Trent Limited</div><div class="mock-ssec">Retail · Large Cap</div></div>
+            <div class="mock-score-bar"><div class="mock-score-val">87</div><div class="mock-bar-track"><div class="mock-bar-fill" style="width:87%"></div></div></div>
+          </div>
+          <div class="mock-stock-row">
+            <div class="mock-tkr">KPIL</div>
+            <div><div class="mock-sname">Kalpataru Projects</div><div class="mock-ssec">Infrastructure · Mid Cap</div></div>
+            <div class="mock-score-bar"><div class="mock-score-val">83</div><div class="mock-bar-track"><div class="mock-bar-fill" style="width:83%"></div></div></div>
+          </div>
+          <div class="mock-reason">
+            <b>🤖 EigenGPT:</b> <span id="eigenGptText" data-text="Dixon's score is driven by 34% YoY revenue growth, improving EBITDA margins (5.2% → 6.8%), and strong PLI scheme tailwinds in electronics. Promoter holding stable at 34.4%. Key risk: customer concentration in Samsung/Apple.">Dixon's score is driven by 34% YoY revenue growth, improving EBITDA margins (5.2% → 6.8%), and strong PLI scheme tailwinds in electronics. Promoter holding stable at 34.4%. Key risk: customer concentration in Samsung/Apple.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="container fade">
+    <div style="text-align:center;"><div class="label" style="justify-content:center;"><span class="label-dot"></span>How It Works</div><h2>Signal → Explain → Act</h2></div>
+    <div class="how-grid">
+      <div class="how-step"><div class="how-num">1</div><h3>ML Model Scores Every Stock</h3><p>XGBoost processes 40+ fundamental & technical factors across Nifty 500. Retrained weekly using walk-forward validation to prevent data leakage.</p></div>
+      <div class="how-step"><div class="how-num">2</div><h3>LLM Explains the Signal</h3><p>RAG pipeline reads earnings transcripts, annual reports, and SEBI filings to generate a plain-language investment thesis for every top-scoring stock.</p></div>
+      <div class="how-step"><div class="how-num">3</div><h3>You Invest with Conviction</h3><p>Scored signals, explained rationale, and smart alerts — so you make decisions like a quant fund manager, not a retail guesser.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section" style="background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container fade">
+    <div class="section-header"><div class="label"><span class="label-dot"></span>Why Eigenwealth</div><h2>Not just another screener.</h2></div>
+    <div class="comp-table">
+      <div class="comp-row head"><div class="comp-cell">Capability</div><div class="comp-cell hl">Eigenwealth</div><div class="comp-cell">Others</div></div>
+      <div class="comp-row"><div class="comp-cell">ML-powered stock scoring (not rules-based)</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">LLM explains every signal in plain English</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">Natural language stock screener</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">Walk-forward validated backtests</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">Reads earnings calls & annual reports for you</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">Portfolio risk & factor exposure analysis</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+      <div class="comp-row"><div class="comp-cell">Built by ML engineers who actively invest</div><div class="comp-cell cc"><div class="cy">✓</div></div><div class="comp-cell cc"><div class="cn">—</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container fade">
+    <div style="text-align:center;margin-bottom:52px;"><div class="label" style="justify-content:center;"><span class="label-dot"></span>Early Traction</div><h2>Growing before we've launched.</h2></div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-val mono" data-counter="300" data-suffix="+" data-live-count>0</div><div class="stat-label">Investors on waitlist</div><div class="stat-sub">Across 12+ cities in India</div></div>
+      <div class="stat-card"><div class="stat-val mono" data-counter="500">0</div><div class="stat-label">Stocks in universe</div><div class="stat-sub">Full Nifty 500 coverage</div></div>
+      <div class="stat-card"><div class="stat-val mono" data-counter="40" data-suffix="+">0</div><div class="stat-label">ML factors per stock</div><div class="stat-sub">Fundamental + technical</div></div>
+      <div class="stat-card"><div class="stat-val mono">5Y</div><div class="stat-label">Backtest depth</div><div class="stat-sub">Walk-forward validated</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section" style="background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="mission-grid fade">
+      <div>
+        <div class="label"><span class="label-dot"></span>About</div>
+        <h2>Built by engineers.<br/>For investors who think in data.</h2>
+        <div class="mission-quote">We built Eigenwealth because the gap between institutional and retail investing shouldn't exist. Hedge funds run quant teams and ML models. Retail investors get Telegram tips. We're closing that gap — one algorithm at a time.</div>
+        <div class="founder-pill"><div class="founder-av">👨‍💻</div><div><div class="founder-name">Samarth & Co-founder</div><div class="founder-role">ML Engineers · B.Tech AI & ML · Indore, India 🇮🇳</div></div></div>
+      </div>
+      <div class="fade fade-delay-1" style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:12px;letter-spacing:.08em;">TECH STACK</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span class="badge badge-green">XGBoost</span><span class="badge badge-green">LightGBM</span><span class="badge badge-blue">Mistral 7B</span><span class="badge badge-blue">ChromaDB</span><span class="badge badge-green">FastAPI</span><span class="badge badge-green">PostgreSQL</span><span class="badge badge-blue">RAG Pipeline</span><span class="badge badge-amber">React</span>
+          </div>
+        </div>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:14px;letter-spacing:.08em;">PRICING PREVIEW</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--t2);padding:10px 0;border-bottom:1px solid var(--border);"><span>Free</span><span style="color:var(--t3);font-family:var(--mono);">₹0 / mo · Top 5 signals</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--t2);padding:10px 0;border-bottom:1px solid var(--border);"><span>Pro</span><span style="color:var(--accent);font-family:var(--mono);">₹999 / mo · Full suite</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--t2);padding:10px 0;"><span>Elite</span><span style="color:var(--blue);font-family:var(--mono);">₹2499 / mo · Everything</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="fade" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:16px;">
+      <div><div class="label"><span class="label-dot"></span>Quant Intelligence Blog</div><h2>Learn while you wait.</h2></div>
+      <a href="#waitlist" class="btn btn-ghost">Subscribe →</a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade fade-delay-1"><div class="blog-thumb">📐</div><div class="blog-body"><div class="blog-cat">Quant Fundamentals</div><h3>What eigenvalues reveal about your portfolio's hidden risks</h3><p>Most investors analyse stocks individually. Quants decompose the covariance matrix. Here's why that changes everything.</p><div class="blog-meta"><span class="soon">Coming Soon</span><span>·</span><span>8 min</span></div></div></div>
+      <div class="blog-card fade fade-delay-2"><div class="blog-thumb">🤖</div><div class="blog-body"><div class="blog-cat">ML for Markets</div><h3>Building an XGBoost multibagger model on Nifty 500 — full walkthrough</h3><p>Feature engineering, walk-forward validation, and 5-year backtest results on real Indian market data.</p><div class="blog-meta"><span class="soon">Coming Soon</span><span>·</span><span>12 min</span></div></div></div>
+      <div class="blog-card fade fade-delay-3"><div class="blog-thumb">💬</div><div class="blog-body"><div class="blog-cat">LLM + Finance</div><h3>Building a RAG system that reads earnings calls automatically</h3><p>ChromaDB, sentence transformers, and a fine-tuned LLM — extracting investment signals from quarterly transcripts.</p><div class="blog-meta"><span class="soon">Coming Soon</span><span>·</span><span>10 min</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner fade">
+      <div class="badge badge-green" style="margin-bottom:22px;"><span class="live-dot"></span>Limited Founding Member Spots</div>
+      <h2>The market doesn't wait.<br/>Neither should you.</h2>
+      <p class="sub">Join the waitlist. Founding members get early access, best pricing, and a direct line to the team.</p>
+      <form id="ctaForm">
+        <input type="hidden" name="first_name" value="CTA User"/>
+        <div class="cta-form">
+          <input type="email" name="email" placeholder="Enter your email address" required/>
+          <button type="submit" class="btn btn-accent" id="ctaBtn">Join Free</button>
+        </div>
+      </form>
+      <div id="ctaSuccess" style="display:none;color:var(--accent);font-size:14px;margin-top:14px;font-weight:600;">✅ You're on the list! We'll be in touch.</div>
+      <div class="cta-trust"><span>🔒 Encrypted</span><span>📧 No spam</span><span>🎁 Free during beta</span><span>🇮🇳 Built in India</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand"><div class="logo" style="margin-bottom:10px;"><div class="logo-mark">λ</div>Eigenwealth</div><p>AI-powered quant intelligence for Indian retail investors. Built by ML engineers who invest.</p></div>
+      <div class="footer-links-group">
+        <div class="footer-col"><h5>Product</h5><a href="#agents">AI Agents</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#waitlist">Join Waitlist</a></div>
+        <div class="footer-col"><h5>Resources</h5><a href="#blog">Blog</a><a href="#">Academy</a><a href="#">Pricing</a></div>
+        <div class="footer-col"><h5>Company</h5><a href="#">About Us</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Eigenwealth. All rights reserved. · Made in Indore, India 🇮🇳</span>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--t4);">v1.0 · Pre-Launch</span>
+    </div>
+    <div class="footer-disclaimer"><strong>Disclaimer:</strong> Eigenwealth is a pre-launch platform providing AI-generated quantitative analysis for educational and informational purposes only. We are not a SEBI-registered investment advisor. Nothing on this website constitutes investment advice, a recommendation to buy or sell any securities, or an offer to invest. Past performance of any model or signal does not guarantee future results. All investments carry risk. Please consult a qualified financial advisor before making any investment decisions. Stock scores and signals are generated by ML models and may be inaccurate. Eigenwealth takes no responsibility for any losses incurred based on platform signals or analysis.</div>
+  </div>
+</footer>
+
+<script src="animations.js"></script>
+</body>
+</html>
